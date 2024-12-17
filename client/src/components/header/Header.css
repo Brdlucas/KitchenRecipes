@@ -1,0 +1,110 @@
+@media screen and (min-width: 766px) {
+
+    /* la div qui englobe tout */
+    .header__global {
+        gap: 2rem;
+        display: flex;
+        padding: 2rem;
+        font-weight:600;
+        margin-top: 2rem;
+        min-height: 64px;
+        background-color: #333333;
+        justify-content: space-between;
+    }
+
+    /* permet de ne pas fficher le menu-burger et la croix */
+    .burger-icon,
+    .close-navbar {
+        display: none;
+    }
+
+
+    /* style le search input */
+    .navbar__search {
+        width: 50%;
+        color: #007BFF;
+        font-size: medium;
+        padding-left: 5px;
+        background-color: #191919;
+        position: relative;
+
+        .search-input {
+            width: 100%;
+            height: 100%;
+        }
+    
+        /* si l'utilisateur ne recherche rien */
+        
+        
+        /* quand l'utilisateur fait une recherche */
+        .search-result-active{
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            position: absolute;
+            background-color: #333333;
+            z-index: 80;
+            
+            li, .link{
+                color: white;
+                list-style-type: none;
+                text-decoration: none;
+            }
+             li{
+                 padding: 1rem;
+
+             }
+            li:hover{
+                background-color: #007BFF;
+            }
+    
+        }
+
+        .search-result-unactive{
+            display: none;
+        }
+ 
+    }
+
+
+    /* div global du navbar et des boutons */
+    .div__global-navbar {
+        display: flex;
+        min-width: 305px;
+    }
+
+    /* align les boutons */
+    .navbar__div {
+        gap: 32px;
+        display: flex;
+        flex-direction: row;
+        margin-right: auto;
+    }
+
+    /* style des boutons */
+    .navbar__div-button {
+        margin: auto;
+        padding: 1rem;
+        color: #007BFF;
+        text-align: center;
+        text-decoration: none;
+        transition: .2s linear;
+        background-color: #191919;
+
+
+        &:hover {
+            color: white;
+            background-color: #007BFF;
+        }
+    }
+
+    /* logo qui renvoie vers la page d'acceuil */
+    .logo {
+        padding: 1rem;
+        color: white;
+        align-content: center;
+        text-decoration: none;
+        background-color: #007BFF;
+    }
+
+}
