@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 import "./responsive-Header.css";
 import { useState, useEffect } from "react";
+import logo from "/logo.png";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [navClass, setNavClass] = useState("nav-hidden");
@@ -9,7 +10,6 @@ const Header = () => {
   const [filter, setFilter] = useState<Recipe[]>([]);
   const [mapFilter, setMapFilter] = useState<string>("");
   const [isFocused, setIsFocused] = useState(true);
-
   const toggleIsOpen = () => {
     setIsOpen((prevState) => !prevState);
   };
@@ -77,7 +77,7 @@ const Header = () => {
         <span className="burger-icon-slot"></span>
       </div>
       <NavLink to={"/"} className="logo">
-        logo
+        <img src={logo} alt="" className="header-img" />
       </NavLink>
       <div className="navbar__search">
         <input

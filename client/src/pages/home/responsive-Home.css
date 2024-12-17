@@ -37,12 +37,12 @@
     
     .logo{
         text-align: center;
-        width: 5rem;
-        margin: auto;
         padding: 1rem;
-        background-color: #007BFF;
+        width: 200px;
+
+
+
         
-        color: white;
     }
     
 }

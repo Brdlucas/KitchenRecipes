@@ -98,13 +98,10 @@
         }
     }
 
-    /* logo qui renvoie vers la page d'acceuil */
-    .logo {
-        padding: 1rem;
-        color: white;
-        align-content: center;
-        text-decoration: none;
-        background-color: #007BFF;
-    }
+}
 
+
+.header-img{
+    width: 100%;
+    height: 64px;
 }
