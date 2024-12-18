@@ -144,7 +144,7 @@ function RecipeDetail() {
         <div className="recipeID-img"></div>
         <div className="recipeID-Info">
           <p>Préparation : {recipe.preparationTime} min</p>
-          {recipe.cooking && <p>Cuisson : {recipe.cooking} min</p>}
+          {recipe.cooking === 0 ? null : <p>Cuisson : {recipe.cooking} min</p>}
           <p>Total : {recipe.cooking + recipe.preparationTime} min</p>
         </div>
         <div className="recipeID-description">

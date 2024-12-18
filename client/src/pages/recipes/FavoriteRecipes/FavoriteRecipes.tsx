@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaHeart } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import "../RecipeList/Recipes.css";
 
 function FavoriteRecipes() {
   const [favorites, setFavorites] = useState<Favorite[] | null>(null);
@@ -46,28 +47,37 @@ function FavoriteRecipes() {
   };
 
   return (
-    <div className="recipe-card">
-      {favorites &&
-        favorites.map((favorite) => (
-          <div key={favorite._id} className="recipe-card__content">
-            <FaHeart
-              className={`heart-icon ${favorite.favorite && "red"}`}
-              onClick={() => {
-                updateRecipes(favorite._id, !favorite.favorite);
-              }}
-            />
-            <NavLink to={`/recipes/${favorite._id}`} className={"linkrecipes"}>
-              <div className="recipe-card__details">
-                <p>{favorite.title}</p>
-                <p>
-                  {favorite.preparationTime + favorite.cooking} minutes /{" "}
-                  {favorite.persons} personnes
-                </p>
-                <p>{favorite.category}</p>
-              </div>
-            </NavLink>
-          </div>
-        ))}
+    <div className="favorite-section">
+      <div className="recipe-card">
+        {favorites &&
+          favorites.map((favorite) => (
+            <div key={favorite._id} className="recipe-card__content">
+              <FaHeart
+                className={`heart-icon ${favorite.favorite && "red"}`}
+                onClick={() => {
+                  updateRecipes(favorite._id, !favorite.favorite);
+                }}
+              />
+              <NavLink
+                to={`/recipes/${favorite._id}`}
+                className={"linkrecipes"}
+              >
+                <div className="recipe-card__details">
+                  <p>{favorite.title}</p>
+                  <p>
+                    {favorite.preparationTime + favorite.cooking} minutes /{" "}
+                    {favorite.persons} personnes
+                  </p>
+                  <div>
+                    {favorite.category.map((category, index) => (
+                      <p key={index}>{category}, </p>
+                    ))}
+                  </div>
+                </div>
+              </NavLink>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

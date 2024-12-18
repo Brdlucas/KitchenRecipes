@@ -18,6 +18,34 @@
 
 }
 
+.navbar__search {
+
+    .search-result-active{
+
+        background-color: #333333;
+        
+        li, .link{
+            color: white;
+            list-style-type: none;
+            text-decoration: none;
+        }
+         li{
+             padding: 1rem;
+    
+         }
+        li:hover{
+            background-color: #007BFF;
+        }
+    
+    }
+    
+    .search-result-unactive{
+        display: none;
+    }
+}
+
+
+
 
 
 /* les traits du burger-icon */

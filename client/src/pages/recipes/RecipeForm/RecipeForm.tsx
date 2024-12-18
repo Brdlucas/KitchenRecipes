@@ -8,9 +8,9 @@ function RecipeForm() {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    persons: 0,
-    preparationTime: 0,
-    cooking: 0,
+    persons: "",
+    preparationTime: "",
+    cooking: "",
     preparation: "",
   });
 
@@ -70,7 +70,7 @@ function RecipeForm() {
 
     const isValid = (value: unknown) => {
       if (Array.isArray(value)) return value.length > 0;
-      if (typeof value === "number") return true; // Considère 0 comme valide
+      if (typeof value === "number") return true;
       return value !== "" && value != null && value !== undefined;
     };
     const allFieldsFilled = Object.values(dataToSend).every(isValid);
@@ -87,9 +87,9 @@ function RecipeForm() {
         setFormData({
           title: "",
           description: "",
-          persons: 0,
-          preparationTime: 0,
-          cooking: 0,
+          persons: "",
+          preparationTime: "",
+          cooking: "",
           preparation: "",
         });
         setCategory([]);
@@ -184,6 +184,30 @@ function RecipeForm() {
               value={categoryText}
             />
           </div>
+          <input
+            type="input"
+            id="cooking"
+            name="cooking"
+            placeholder="cuisson"
+            value={formData.cooking}
+            onChange={handleChange}
+          />
+          <input
+            type="input"
+            id="preparationTime"
+            name="preparationTime"
+            placeholder="temps de préparation"
+            value={formData.preparationTime}
+            onChange={handleChange}
+          />
+          <input
+            type="input"
+            id="persons"
+            name="persons"
+            placeholder="pour combien de personnes"
+            value={formData.persons}
+            onChange={handleChange}
+          />
           <textarea
             name="preparation"
             id="preparation"

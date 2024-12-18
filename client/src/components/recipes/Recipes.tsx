@@ -101,24 +101,28 @@ function Recipes({ renderType, valueFilter }: RecipesProps) {
   };
 
   return (
-    <div className="recipe-card">
-      {recipes &&
-        recipes.length > 0 &&
-        (renderType === "map" ? (
-          recipes.map((recipe) => <GetMap key={recipe._id} recipe={recipe} />)
-        ) : renderType === "some" ? (
-          recipes
-            .slice(-4)
-            .map((recipe) => <GetMap key={recipe._id} recipe={recipe} />)
-        ) : renderType === "filter" ? (
-          filter.length > 0 ? (
-            filter.map((filter) => <GetMap key={filter._id} recipe={filter} />)
-          ) : (
-            <DefaultList />
-          )
-        ) : //
+    <div className="recipes-grid">
+      <div className="recipe-card">
+        {recipes &&
+          recipes.length > 0 &&
+          (renderType === "map" ? (
+            recipes.map((recipe) => <GetMap key={recipe._id} recipe={recipe} />)
+          ) : renderType === "some" ? (
+            recipes
+              .slice(-4)
+              .map((recipe) => <GetMap key={recipe._id} recipe={recipe} />)
+          ) : renderType === "filter" ? (
+            filter.length > 0 ? (
+              filter.map((filter) => (
+                <GetMap key={filter._id} recipe={filter} />
+              ))
+            ) : (
+              <DefaultList />
+            )
+          ) : //
 
-        null)}
+          null)}
+      </div>
     </div>
   );
 }

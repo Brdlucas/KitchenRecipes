@@ -26,6 +26,7 @@ const RecipesSchema = new Schema({
   cooking: {
     type: Number,
     required: true,
+    default: null,
   },
 
   ingredients: {
