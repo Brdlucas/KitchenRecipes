@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./RecipeDetail.css";
 import { FaHeart } from "react-icons/fa6";
 import Recipes from "../../../components/recipes/Recipes";
+import { RiDeleteBin6Fill } from "react-icons/ri";
 
 function RecipeDetail() {
   const [recipe, setRecipe] = useState<Recipe | null>(null);
@@ -128,18 +129,15 @@ function RecipeDetail() {
     recipe && (
       <div className="recipeID-section">
         <h1 className="recipeID-title">
+          <RiDeleteBin6Fill
+            onClick={() => deleteRecipe(recipe._id)}
+            className="heart-icon"
+          />
           {recipe.title}{" "}
           <FaHeart
             className={`heart-icon ${recipe.favorite && "red"}`}
             onClick={() => updateRecipes(recipe._id, !recipe.favorite)}
           />
-          -
-          <p
-            onClick={() => deleteRecipe(recipe._id)}
-            style={{ cursor: "pointer", color: "red" }}
-          >
-            supprimer
-          </p>
         </h1>
         <div className="recipeID-img"></div>
         <div className="recipeID-Info">

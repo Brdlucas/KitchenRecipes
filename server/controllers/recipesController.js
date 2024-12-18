@@ -38,7 +38,6 @@ const deleteRecipe = async (req, res) => {
 };
 
 const searchfilterRecipes = async (req, res) => {
-  console.log(req.body.value);
   try {
     const recipes = await Recipes.find();
 
